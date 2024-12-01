@@ -5,9 +5,10 @@ from decouple import config
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import CSVLoader
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+# from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
-path_csv = "gasto_new.csv"
+path_csv = "files/gasto_new.csv"
 
 os.environ["GOOGLE_API_KEY"] = config("API_GEMINI")
 if "GOOGLE_API_KEY" not in os.environ:
@@ -32,7 +33,8 @@ def vector_store():
     persist_directory = "db"
     model_embedding = "models/text-embedding-004"
     # model_embedding = "models/embedding-001"
-    embedding = GoogleGenerativeAIEmbeddings(model=model_embedding)
+    # embedding = GoogleGenerativeAIEmbeddings(model=model_embedding)
+    embedding = HuggingFaceEmbeddings()
     chroma = Chroma.from_documents(
         documents=chunks(),
         embedding=embedding,

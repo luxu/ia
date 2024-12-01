@@ -1,0 +1,31 @@
+[project]
+name = "ia"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-community>=0.3.2",
+    "langchain-google-genai>=2.0.1",
+    "langchain>=0.3.3",
+    "langchain-chroma>=0.1.2",
+    "python-decouple>=3.8",
+    "ruff>=0.6.9",
+    "langchain-huggingface>=0.1.0",
+    "streamlit>=1.39.0",
+    "ollama>=0.3.3",
+    "langchain-groq>=0.2.0",
+    "ipython>=8.29.0",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "xlrd>=2.0.1",
+    "jupyter>=1.1.1",
+    "composio-langchain>=0.5.43",
+    "duckduckgo-search>=6.3.5",
+    "crewai>=0.75.0",
+    "composio-crewai>=0.5.47",
+    "swekit>=0.2.45",
+    "composio-core>=0.5.43",
+]
+[tool.uv]
+cache-dir = "./.uv_cache"

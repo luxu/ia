@@ -8,6 +8,8 @@ __pycache__/
 *$py.class
 # C extensions
 *.so
+*.xml
+.idea/
 
 # Distribution / packaging
 .Python

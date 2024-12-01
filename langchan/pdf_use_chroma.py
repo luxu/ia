@@ -1,23 +1,25 @@
 import os
 from getpass import getpass
+
 from decouple import config
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain.chains.retrieval import create_retrieval_chain
-
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_huggingface import HuggingFaceEmbeddings
 
 os.environ["GOOGLE_API_KEY"] = config("API_GEMINI")
 
 if "GOOGLE_API_KEY" not in os.environ:
     os.environ["GOOGLE_API_KEY"] = getpass("Provide your Google API key here")
 
-persist_directory = "db"
+persist_directory = "../db"
 query = "Diabético pode consumir mel? Toda resposta em português"
 model_embedding = "models/text-embedding-004"
 
-embedding = GoogleGenerativeAIEmbeddings(model=model_embedding)
+# embedding = GoogleGenerativeAIEmbeddings(model=model_embedding)
+embedding = HuggingFaceEmbeddings()  # embedding FREE
 
 vector_store = Chroma(
     persist_directory=persist_directory,  # Será persistido no disco
