@@ -26,6 +26,6 @@ tools = composio_toolset.get_tools(actions=['FILETOOL_SEARCH_WORD'])
 agent = create_openai_functions_agent(llm, tools, prompt)
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-task = f"Procurar pela palavra 'google' no diretório {current_dir}\*.txt"
-result = agent_executor.invoke({"input": task})
-print(result)
+# task = f"Procurar pela palavra 'google' no diretório {current_dir}\*.txt"
+# result = agent_executor.invoke({"input": task})
+# print(result)

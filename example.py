@@ -1,8 +1,6 @@
 import re
 
-from decouple import config
 from duckduckgo_search import DDGS
-from openai import OpenAI
 
 
 def search(query, max_results=10):

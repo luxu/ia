@@ -26,6 +26,11 @@ dependencies = [
     "composio-crewai>=0.5.47",
     "swekit>=0.2.45",
     "composio-core>=0.5.43",
+    "psycopg2>=2.9.10",
+    "matplotlib>=3.9.3",
+    "pandasai>=2.0.24",
+    "pypdf>=5.1.0",
+    "assemblyai>=0.35.1",
 ]
 [tool.uv]
 cache-dir = "./.uv_cache"

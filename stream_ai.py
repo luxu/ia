@@ -48,31 +48,24 @@ def ask_question(model, query, vector_store):
 
 def use_streamlit():
     st.set_page_config(
-        page_title='Estoque GPT',
+        page_title='SAP GPT',
         page_icon='📄',
     )
     st.header('Assistente Virtual')
-
     model_options = [
         'llama3.1:8b',
         'llava',
     ]
-
     selected_model = st.sidebar.selectbox(
         label='Selecione o modelo LLM',
         options=model_options,
     )
-
     st.sidebar.markdown('### Sobre')
     st.sidebar.markdown('Este agente pesquisa sobre diversos assuntos utilizando um modelo GPT.')
-
     st.write('Faça perguntas sobre qualquer assunto ligado a Tecnologia.')
     user_question = st.text_input('O que deseja saber?')
-
     question = st.chat_input('Como posso ajudar?')
-
     st.chat_message('user').write(question)
-
     prompt = '''
     Exercitando os conceitos de PLN utilizando NLTK, Spacy e Transformers
     Considerando as abordagens e exemplificações demonstradas no encontro de 05/10/2024:
